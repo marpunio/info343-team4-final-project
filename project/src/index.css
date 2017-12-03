@@ -3,3 +3,19 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#icons {
+	padding-left: 22px;
+}
+
+footer { 
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+#locations {
+	font-size: 14px;
+}
+
+svg {
+	fill: white;
+}
