@@ -16,6 +16,21 @@ footer {
 	font-size: 14px;
 }
 
+nav a {
+	color: white;	
+}
+
+nav img {
+	height: 55px;
+}
+
+.nav-item {
+	font-size: 20px;
+	font-family: "Helvetica Neue";/*
+	text-transform: uppercase;*/
+	letter-spacing: .5px;
+}
+
 svg {
 	fill: white;
 }
