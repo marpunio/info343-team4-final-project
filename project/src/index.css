@@ -16,6 +16,11 @@ footer {
 	font-size: 14px;
 }
 
+#menu-page {
+	height: 500px;
+	background-image: "../public/udonpic.png";
+}
+
 nav a {
 	color: lightgrey;	
 }
@@ -33,6 +38,10 @@ nav img {
 	font-family: "Helvetica Neue";/*
 	text-transform: uppercase;*/
 	letter-spacing: .5px;
+}
+
+#red {
+	color: red;
 }
 
 svg {
