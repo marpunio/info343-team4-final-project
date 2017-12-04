@@ -17,7 +17,11 @@ footer {
 }
 
 nav a {
-	color: white;	
+	color: lightgrey;	
+}
+
+nav a:hover {
+	color: white;
 }
 
 nav img {
