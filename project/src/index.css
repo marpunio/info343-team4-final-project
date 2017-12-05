@@ -47,3 +47,31 @@ nav img {
 svg {
 	fill: white;
 }
+
+.udon-red {
+    color: #ed1c24;
+}
+
+div.menu-header {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+div.udon-red {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.specials {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.container {
+	float: center;
+	align-items: center;
+}
+
+div.udon-red.menu-header {
+	float: center;
+}
