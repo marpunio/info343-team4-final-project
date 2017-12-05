@@ -24,6 +24,12 @@ export default class NavBar extends React.Component {
                         <li class="nav-item">
                             <a class="nav-link" href={constants.routes.contact}>Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={constants.routes.signin}>Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={constants.routes.signup}>Sign Up</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
