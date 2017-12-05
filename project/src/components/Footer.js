@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
             	<footer className="row">
 	        		<div className="container">
 	               		<div class="contact-icons">
-	               			<p className="my-1 h3 font-weight-bold">Fresh Udon</p>
+	               			<p className="my-1 h3 font-weight-light">Fresh Udon</p>
 	               			<br/>
 			               	<p id="icons">
 			               		<a href="https://www.facebook.com/udon.noodle.station/" class="text-light mr-3" aria-label="facebook page">
@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
 			                            />
 			                        </svg>
 			                    </a>
-			                    <a href="https://twitter.com" class="text-light mr-3" aria-label="twitter page">
+			                    <a href="https://twitter.com/udon12thave?lang=en" class="text-light mr-3" aria-label="twitter page">
 			                        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 612 612">
 			                            <path d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"
 			                            />
@@ -36,10 +36,6 @@ export default class Footer extends React.Component {
 			            	</p>
 	        			</div>
 	               	</div>
-	            	<div className="container font-weight-light" id="locations">
-	            		<p>University District: 4515 University Way NE, Seattle, WA 98105 (206) 453-3788</p>
-	            		<p>Capitol Hill: 1640 12th Ave, Seattle, WA 98122 (206) 466-1471</p>
-	            	</div>
 	            </footer>
             </div>
         );
