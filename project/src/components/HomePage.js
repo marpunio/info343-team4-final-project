@@ -30,7 +30,6 @@ export default class HomePage extends React.Component {
                         <li><strong>New Years Day (1/1)</strong>: Closed all day</li>
                     </ul>
                 </span>
-<<<<<<< HEAD
                 <Link to={constants.routes.menu}>View our <span class="udon-red">Menu!</span></Link>
                 <div className="udon-red">Taste our amazing noodle specials at <strong style={{color: "black"}}>U<span className="udon-red">:D</span>on</strong>!</div>
                 <div style={{fontWeight: "normal", fontSize: 15.5 + "px"}}>Try our hand-made Sanuki udon in two new chilled styles for a little variety.</div>
@@ -40,7 +39,6 @@ export default class HomePage extends React.Component {
                 <div className="specials" style={{fontSize: 16 + "px"}}>Tan Tan Goma Zaru Udon</div>
                 <img src="https://udonseattle.files.wordpress.com/2013/06/menu-tan-tan-goma-zaru-2.png?w=640"/>
                 <div style={{fontSize: 14 + "px", lineHeight: 16 + "px", fontWeight: "normal"}}><span class="udon-red">For the spicy food lovers!</span> Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side.</div>
-=======
                 <Link to={constants.routes.menu}>View our <span className="udon-red">Menu!</span></Link>
                 <div className="udon-red">Taste our amazing noodle specials at <strong style={{ color: "black" }}>U<span className="udon-red">:D</span>on</strong>!</div>
                 <div style={{ fontWeight: "normal", fontSize: 15.5 + "px" }}>Try our hand-made Sanuki udon in two new chilled styles for a little variety.</div>
@@ -50,7 +48,6 @@ export default class HomePage extends React.Component {
                 <div className="specials" style={{ fontSize: 16 + "px" }}>Tan Tan Goma Zaru Udon</div>
                 {/* <img src="https://udonseattle.files.wordpress.com/2013/06/menu-tan-tan-goma-zaru-2.png?w=640"> */}
                 <div style={{ fontSize: 14 + "px", lineHeight: 16 + "px", fontWeight: "normal" }}><span className="udon-red">For the spicy food lovers!</span> Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side.</div>
->>>>>>> 637b8bc51da1ea57769636887e9f87e9cebf5560
             </div>
         );
     }
