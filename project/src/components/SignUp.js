@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -17,17 +18,9 @@ export default class SignUp extends React.Component {
     }
 
     componentDidMount() {
-        this.authUnsub = firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                this.props.history.push(constants.routes.home)
-            } else {
-                this.setState(user);
-            }
-        })
-    }
-
-    componentWillUnmount() {
-        this.authUnsub();
+        if (this.props.user) {
+            this.props.history.push(constants.routes.home);
+        }
     }
 
     handleSignUp(event) {
@@ -40,7 +33,8 @@ export default class SignUp extends React.Component {
                         displayName: this.state.displayName
                     });
                 })
-                .catch(error => this.setState({ errorMessage: error.message }))
+                .then(() => this.props.history.push(constants.routes.home))
+                .catch(error => this.setState({ errorMessage: error.message }));
         } else {
             this.setState({ password: '', passwordConfirmation: '', errorMessage: 'Passwords do not match' });
         }
@@ -93,7 +87,7 @@ export default class SignUp extends React.Component {
                     </div>
                 </form>
                 <p>
-                    {/* Have an account? <Link to="/signin">Sign In!</Link> */}
+                    Have an account? <Link to={constants.routes.signin}>Sign In!</Link>
                 </p>
             </div>
         );
