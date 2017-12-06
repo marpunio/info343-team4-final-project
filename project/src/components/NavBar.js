@@ -32,18 +32,12 @@ export default class NavBar extends React.Component {
                         <li class="nav-item mx-2">
                             <a class="nav-link" href={constants.routes.contact}>Contact Us</a>
                         </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href={constants.routes.signin}>Sign In</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href={constants.routes.signup}>Sign Up</a>
-                        </li>
                         {
                             this.props.user ?
                                 <li className="nav-item">
                                     <button className="btn btn-primary" onClick={this.handleSignOut} type="submit">Sign out</button>
                                 </li> :
-                                <div>
+                                <div className="d-flex flex-nowrap">
                                     <li className="nav-item">
                                         <a className="nav-link" href={constants.routes.signin}>Sign In</a>
                                     </li>

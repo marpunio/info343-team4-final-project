@@ -12,6 +12,15 @@ footer {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
+#home-page {
+	background-color: blue;
+}
+
+#logo-bowl {
+	max-height: 200px;
+	margin-top: 20px;
+}
+
 #locations {
 	font-size: 14px;
 }
