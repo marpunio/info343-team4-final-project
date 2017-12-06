@@ -35,6 +35,8 @@ export default class Footer extends React.Component {
 			                    </a>
 			            	</p>
 	        			</div>
+	        			<p>University District: 4515 University Way NE, Seattle, WA 98105 (206) 453-3788</p>
+						<p>Capitol Hill: 1640 12th Ave, Seattle, WA 98122 (206) 466-1471</p>
 	               	</div>
 	            </footer>
             </div>
