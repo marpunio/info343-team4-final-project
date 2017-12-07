@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import NavBar from './components/NavBar';
-import HomePage from './components/HomePage';
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
-import MenuPage from './components/MenuPage';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import MenuPage from './components/MenuPage';
+import NavBar from './components/NavBar';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import UserSettings from './components/UserSettings';
 import constants from './components/constants';
 
 class App extends Component {
@@ -47,7 +48,10 @@ class App extends Component {
 				<NavBar privilege={this.state.privilege} user={this.state.user} />
 				<Router>
 					<Switch>
+						<Route exact path={constants.routes.contact} component={ContactPage} />
 						<Route exact path={constants.routes.home} component={HomePage} />
+						<Route exact path={constants.routes.menu} component={MenuPage} />
+						<Route exact path={constants.routes.settings} component={UserSettings} />
 						<Route exact path={constants.routes.signup}
 							render={
 								props => <SignUp {...props} handlePrivilege={this.handlePrivilege} />
@@ -58,8 +62,6 @@ class App extends Component {
 								props => <SignIn {...props} handlePrivilege={this.handlePrivilege} />
 							}
 						/>
-						<Route exact path={constants.routes.menu} component={MenuPage} />
-						<Route exact path={constants.routes.contact} component={ContactPage} />
 						<Route component={HomePage} />
 					</Switch>
 				</Router>
