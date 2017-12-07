@@ -45,6 +45,30 @@ export default class MenuPage extends React.Component {
                         descr="Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!"
                         src="freshudon12.png" alt="udon12"/>  
                 </div>
+                <br/>
+                <br/>
+
+                <h2 className="text-center selection-2">Add a CRUNCH or something SWEET</h2>
+                <div className="container d-flex flex-wrap justify-content-center text-center">
+                    <MenuItem soupName="Tempura" japaneseName="天ぷら"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-tempura.png?w=170&zoom=2" alt="tempura"/>
+                    <MenuItem soupName="Kaki-Age" japaneseName="かき揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-kakiage.png?w=170&zoom=2" alt="kakiage"/>
+                    <MenuItem soupName="Kaarage" japaneseName="唐揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-karaage.png?w=170&zoom=2" alt="kaarage"/>
+                    <MenuItem soupName="Onigiri" japaneseName="おむすび"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-onigiri2.png?w=170&zoom=2" alt="onigiri"/>
+                    <MenuItem soupName="Fountain Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-fountain-drink.png?w=170&zoom=2" alt="drink"/>
+                    <MenuItem soupName="Specialty Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-specialty-drink.png?w=170&zoom=2" alt="specialty drink"/>
+                    <MenuItem soupName="Cake Slice" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-cake.png?w=170&zoom=2" alt="cake"/>
+                    <MenuItem soupName="Flan/Purin" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin"/>
+                    
+                    
+                </div>
             </div>
         );
     }

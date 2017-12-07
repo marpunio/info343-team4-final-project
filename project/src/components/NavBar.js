@@ -10,16 +10,16 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-md bg-dark">
+                <nav className="navbar navbar-expand-md">
                     <a className="navbar-brand" href={constants.routes.home}>
                         <img src="http://www.mataro-parc.com/sites/default/files/field/operador-logo/udon_-_logo.jpg" alt="udon-logo" />
                     </a>
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item mx-2">
-                            <a className="nav-link" href={constants.routes.menu}>Menu</a>
+                            <a className="nav-link barlow" href={constants.routes.menu}>Menu</a>
                         </li>
                         <li className="nav-item mx-2">
-                            <a className="nav-link" href={constants.routes.contact}>Contact Us</a>
+                            <a className="nav-link barlow" href={constants.routes.contact}>Contact Us</a>
                         </li>
                         {
                             this.props.user ?
@@ -67,10 +67,10 @@ class SignRedirect extends React.Component {
         return (
             <div className="d-flex flex-nowrap">
                 <li className="nav-item">
-                    <a className="nav-link" href={constants.routes.signin}>Sign In</a>
+                    <a className="nav-link barlow" href={constants.routes.signin}>Sign In</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href={constants.routes.signup}>Sign Up</a>
+                    <a className="nav-link barlow" href={constants.routes.signup}>Sign Up</a>
                 </li>
             </div>
         );

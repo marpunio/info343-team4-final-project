@@ -4,6 +4,7 @@ export default class Footer extends React.Component {
     render() {
         return(
             <div className="bg-light text-black py-2 text-center">
+            	<hr/>
             	<footer>
 	        		<div className="container">
 	               		<div className="contact-icons">
