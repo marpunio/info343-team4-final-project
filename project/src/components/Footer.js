@@ -3,12 +3,11 @@ import React from 'react';
 export default class Footer extends React.Component {
     render() {
         return(
-            <div className="bg-dark text-white py-2 text-center">
-            	<footer className="row">
+            <div className="bg-light text-black py-2 text-center">
+            	<footer>
 	        		<div className="container">
 	               		<div className="contact-icons">
-	               			<p className="my-1 h3 font-weight-light">Fresh Udon</p>
-	               			<br/>
+	               			<p className="barlow my-2 h3 font-weight-light">Fresh Udon</p>
 			               	<p id="icons">
 			               		<a href="https://www.facebook.com/udon.noodle.station/" className="text-light mr-3" aria-label="facebook page">
 			                        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 510 510">
@@ -35,8 +34,10 @@ export default class Footer extends React.Component {
 			                    </a>
 			            	</p>
 	        			</div>
-	        			<p>University District: 4515 University Way NE, Seattle, WA 98105 (206) 453-3788</p>
-						<p>Capitol Hill: 1640 12th Ave, Seattle, WA 98122 (206) 466-1471</p>
+	        			<div>
+		        			<p className="barlow my-1">University District: 4515 University Way NE, Seattle, WA 98105 (206) 453-3788</p>
+							<p className="barlow my-1">Capitol Hill: 1640 12th Ave, Seattle, WA 98122 (206) 466-1471</p>
+						</div>
 	               	</div>
 	            </footer>
             </div>

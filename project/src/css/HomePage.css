@@ -1,0 +1,22 @@
+
+.steps {
+	font-size: 20px;
+	text-align: center;
+}
+
+#steps {
+	font-family: "Barlow";
+}
+
+div.udon-red.menu-header {
+	float: center;
+}
+
+.udon-red {
+    color: #ed1c24;
+}
+
+#logo-bowl {
+	max-height: 180px;
+	margin-top: 20px;
+}

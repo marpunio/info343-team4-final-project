@@ -1,5 +1,4 @@
 import React from 'react';
-import MenuItem from './MenuItem';
 
 export default class MenuPage extends React.Component {
     render() {
@@ -45,6 +44,21 @@ export default class MenuPage extends React.Component {
                     <MenuItem udonClass="udon-title-12" soupName="Tan Tan Goma Zaru" japaneseName="担々ごま笊うどん"
                         descr="Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!"
                         src="freshudon12.png" alt="udon12"/>  
+                </div>
+            </div>
+        );
+    }
+}
+
+class MenuItem extends React.Component {
+    render() {
+        return (
+            <div className="px-2 my-2 mx-2 col-lg-3">
+                <img className="menu-pic" src={this.props.src} alt={this.props.alt}/>
+                <div className="menu-japanese">
+                    <p className="my-1">{this.props.soupName}</p>
+                    <p className="my-0">{this.props.japaneseName}</p>
+                    <p className="menu-desc my-0">{this.props.descr}</p>
                 </div>
             </div>
         );
