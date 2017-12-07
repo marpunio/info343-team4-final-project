@@ -7,30 +7,63 @@ export default class UserSettings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            accountPrivilege: '',
             oldPassword: '',
             newPassword: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            password: ''
         };
         this.handleDelete = this.handleDelete.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
 
+    componentDidMount() {
+        this.authUnsub = firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                console.log(user)
+                this.userRef = firebase.database().ref('users').child(user.uid);
+                this.userRef.on('value', snapshot => {
+                    let privilege = snapshot.val();
+                    if (privilege !== null) {
+                        this.setState({ accountPrivilege: privilege.privilege });
+                    }
+                });
+            }
+        });
+    }
+
+    componentWillUnmount() {
+        if (this.userRef) {
+            this.userRef.off();
+        }
+        this.authUnsub();
+    }
+
     handleDelete() {
         let user = firebase.auth().currentUser;
         user.delete()
-            .catch(error => this.setState({ errorMessage: error.message }));
+            .catch(error => this.setState({ deleteErrorMessage: error.message }));
+        firebase.database().ref('users').child(user.uid).remove();
     }
 
     handlePasswordChange() {
         let user = firebase.auth().currentUser;
-        user.updatePassword()
-            .catch(error => this.setState({ errorMessage: error.message }));
+        if (this.statenewPassword === this.state.confirmPassword) {
+            user.reauthenticateWithCredential(firebase.auth.EmailAuthProvider.credential(user.email, this.state.oldPassword))
+                .updatePassword(this.state.newPassword)
+                .catch(error => this.setState({ passwordErrorMessage: error.message }));
+        }
     }
 
     render() {
         return (
             <div className="container initial-page text-center">
-                <h2 className="user-settings">Change Password</h2>
+                <h2 className="user-settings">Change Password{this.state.password}</h2>
+                {
+                    this.state.errorMessage ?
+                        <div className="alert alert-danger">{this.state.passwordErrorMessage}</div> :
+                        undefined
+                }
                 <form onSubmit={this.handlePasswordChange}>
                     <div className="form-group">
                         <input className="form-control ml-auto mr-auto" id="oldPassword" type="password"
@@ -61,10 +94,15 @@ export default class UserSettings extends React.Component {
                     </div>
                 </form>
                 <h2 className="user-settings user-delete">Delete Account</h2>
+                {
+                    this.state.errorMessage ?
+                        <div className="alert alert-danger">{this.state.deleteErrorMessage}</div> :
+                        undefined
+                }
                 <p>Once you delete your account, there is no going back. Please be certain.</p>
                 <form onSubmit={this.handleDelete}>
-                    <button className="btn settings-btn delete-btn" data-toggle="modal" data-target="#deleteAccount" type="submit">Delete Account</button>
-                    <div className="center">
+                    <button className="btn settings-btn delete-btn" type="submit">Delete Account</button>
+                    {/* <div className="center">
                         <div className="modal fade" id="deleteAccount" tabIndex="-1" role="dialog" aria-labelledby="DeleteAccountLabel" aria-hidden="true">
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
@@ -78,7 +116,7 @@ export default class UserSettings extends React.Component {
                                         <h3>All your data will be permanently deleted.</h3>
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-success" onClick={() => this.handleDelete()}>Save</button>
+                                        <button type="button" className="btn btn-success" onClick={() => this.handleDelete}>Delete</button>
                                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                     <input className="hide" type="file" accept="image/*" required
@@ -88,7 +126,7 @@ export default class UserSettings extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </form>
             </div>
         );

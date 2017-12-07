@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import md5 from 'blueimp-md5';
 import constants from './constants';
 
 export default class SignUp extends React.Component {
@@ -36,16 +37,13 @@ export default class SignUp extends React.Component {
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                 .then(user => {
                     user.updateProfile({
-                        displayName: this.state.displayName
+                        displayName: this.state.displayName,
+                        photoURL: 'https://www.gravatar.com/avatar/' + md5(this.state.email.toLowerCase())
                     });
                     firebase.database().ref('users').child(user.uid).set({
                         'privilege': this.state.accountPrivilege,
-                        'userdata': {
-                            'displayName': user.displayName,
-                            'uid': user.uid
-                        }
+                        'email': user.email
                     });
-                    this.props.handlePrivilege(this.state.accountPrivilege);
                 })
                 .then(() => this.props.history.push(constants.routes.home))
                 .catch(error => this.setState({ errorMessage: error.message }));

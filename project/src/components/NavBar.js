@@ -5,6 +5,38 @@ import 'firebase/database';
 import constants from './constants';
 
 export default class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            accountPrivilege: '',
+            user: undefined
+        };
+    }
+
+    componentDidMount() {
+        this.authUnsub = firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                this.userRef = firebase.database().ref('users').child(user.uid);
+                this.userRef.on('value', snapshot => {
+                    let privilege = snapshot.val();
+                    if(privilege !== null) {
+                        this.setState({accountPrivilege: privilege.privilege});
+                    }
+                });
+                this.setState({ user: user });
+            } else {
+                this.setState({ user: undefined });
+            }
+        });
+    }
+
+    componentWillUnmount() {
+        if(this.userRef) {
+            this.userRef.off();
+        }
+        this.authUnsub();
+    }
+
     render() {
         return (
             <div>
@@ -23,8 +55,8 @@ export default class NavBar extends React.Component {
                             <a className="nav-link barlow" href={constants.routes.contact}>Contact Us</a>
                         </li>
                         {
-                            this.props.user ?
-                                <Dropdown user={this.props.user} /> :
+                            this.state.user ?
+                                <Dropdown user={this.state.user} /> :
                                 <SignRedirect />
                         }
                     </ul>
