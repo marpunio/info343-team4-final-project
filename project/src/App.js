@@ -55,7 +55,7 @@ class App extends Component {
 						<Route exact path={constants.routes.home} component={HomePage} />
 						<Route exact path={constants.routes.menu}
 							render={
-								props => <MenuPage {...props} user={this.state.user} />
+								props => <MenuPage {...props} user={this.state.user} privilege={this.state.privilege} />
 							}
 						/>
 						<Route exact path={constants.routes.mission} component={Mission} />

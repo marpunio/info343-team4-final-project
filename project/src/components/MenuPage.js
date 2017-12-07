@@ -14,6 +14,8 @@ export default class MenuPage extends React.Component {
     }
 
     render() {
+        console.log(this.props.privilege)
+        console.log(this.props.user)
         return (
             <div className="menu-view bg-light py-2">
                 <h1 className="my-2 text-center selection-1 barlow">T h e  &nbsp; <span className="udon-red">S e l e c t i o n</span></h1>
@@ -78,7 +80,7 @@ export default class MenuPage extends React.Component {
                     <MenuItem soupName="Flan/Purin" japaneseName="デザート"
                         src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin" />
                 </div>
-                {this.props.privilege==="admin" ? <AddMenuItem /> : undefined}
+                {this.props.user ? <AddMenuItem /> : undefined}
             </div>
         );
     }
