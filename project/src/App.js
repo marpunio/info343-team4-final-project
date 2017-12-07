@@ -50,7 +50,11 @@ class App extends Component {
 					<Switch>
 						<Route exact path={constants.routes.contact} component={ContactPage} />
 						<Route exact path={constants.routes.home} component={HomePage} />
-						<Route exact path={constants.routes.menu} component={MenuPage} />
+                        <Route exact path={constants.routes.menu}
+                            render={
+								props => <MenuPage {...props} user={this.state.user} />
+							}
+                        />
 						<Route exact path={constants.routes.settings} component={UserSettings} />
 						<Route exact path={constants.routes.signup}
 							render={

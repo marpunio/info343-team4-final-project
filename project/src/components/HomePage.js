@@ -10,7 +10,7 @@ export default class HomePage extends React.Component {
                     <img src="https://udonseattle.files.wordpress.com/2011/12/logo-bowl.png" alt="bowl" />
                 </div>
                 <div id="steps" className="text-center">
-                    <h2 >Easy as <span class="udon-red">1, 2, 3!</span></h2>
+                    <h2 >Easy as <span className="udon-red">1, 2, 3!</span></h2>
                 </div>
                 <div id="steps" className="d-flex flex-nowrap justify-content-center my-2">
                     <div className="steps mx-4">
@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
                     </div>
                 </div>
                 <hr/>
-                <p className="barlow"><strong>U<span class="udon-red">:D</span>on Fresh Japanese Noodle Station</strong> is a pair of Seattle restaurants specializing in serving fresh, house-made udon noodles cooked to order and delivered in a fast, entertaining, and interactive fashion. Our guests can watch the udon noodles being made, as they customize their meal with freshly prepared toppings and sides to their preference.</p>
+                <p className="barlow"><strong>U<span className="udon-red">:D</span>on Fresh Japanese Noodle Station</strong> is a pair of Seattle restaurants specializing in serving fresh, house-made udon noodles cooked to order and delivered in a fast, entertaining, and interactive fashion. Our guests can watch the udon noodles being made, as they customize their meal with freshly prepared toppings and sides to their preference.</p>
             </div>
         );
     }
