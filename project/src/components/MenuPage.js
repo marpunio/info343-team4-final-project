@@ -207,7 +207,6 @@ class AddMenuItem extends React.Component {
                                 onChange={(event) => this.handleUploadImage(event)}
                             />
                         </div>
-
                     </div>
                 </div>
             </div>

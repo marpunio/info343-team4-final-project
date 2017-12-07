@@ -1,0 +1,12 @@
+.delete-btn, .user-delete {
+    color: #cb2431;
+}
+
+.settings-btn {
+    background-color: lightgrey;
+}
+
+.user-settings {
+    border-bottom: 1px #e1e4e8 solid;
+    padding-bottom: 10px;
+}

@@ -42,6 +42,7 @@ class Dropdown extends React.Component {
     handleSignOut(event) {
         event.preventDefault();
         firebase.auth().signOut()
+            .then(this.props.history.push(constants.routes.home))
             .catch(error => this.setState({ errorMessage: error.message }));
     }
 
@@ -52,8 +53,8 @@ class Dropdown extends React.Component {
                     User Settings
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item barlow" href={constants.routes.home}>Profile</a>
-                    <a className="dropdown-item barlow" href={constants.routes.settings}>Order</a>
+                    <a className="dropdown-item barlow" href={constants.routes.order}>Order</a>
+                    <a className="dropdown-item barlow" href={constants.routes.settings}>Settings</a>
                     <a type="submit" className="dropdown-item barlow" onClick={this.handleSignOut}>Sign Out</a>
                 </div>
             </div>

@@ -1,16 +1,96 @@
 import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import '../css/UserSettings.css';
 
 export default class UserSettings extends React.Component {
-    // delete account/change email?/change password/photoURL?
+    constructor(props) {
+        super(props);
+        this.state = {
+            oldPassword: '',
+            newPassword: '',
+            confirmPassword: ''
+        };
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    }
+
+    handleDelete() {
+        let user = firebase.auth().currentUser;
+        user.delete()
+            .catch(error => this.setState({ errorMessage: error.message }));
+    }
+
+    handlePasswordChange() {
+        let user = firebase.auth().currentUser;
+        user.updatePassword()
+            .catch(error => this.setState({ errorMessage: error.message }));
+    }
+
     render() {
         return (
-            <div>
-            	<h2 className="mx-4">Order Online</h2>
-                <p className="mx-2">
-                	<a href="https://www.trycaviar.com/t/seattle/udon--capitol-hill-3632?groups=f_online__d_clink2__p_marketing__c_merchant-links&amp;utm_medium=clink2&amp;utm_source=marketing&amp;utm_campaign=merchant-links&amp;utm_term=seattle&amp;utm_content=udon--capitol-hill-3632"><img src="https://udonseattle.files.wordpress.com/2017/04/orderdelivery.jpg?w=196" width="196" height="46" srcset="https://udonseattle.files.wordpress.com/2017/04/orderdelivery.jpg?w=196&amp;zoom=2 2x" src-orig="https://udonseattle.files.wordpress.com/2017/04/orderdelivery.jpg?w=640" scale="2"/></a>
-                	<a href="https://www.trycaviar.com/t/seattle/udon--capitol-hill-3632?groups=f_online__d_clink2__p_marketing__c_merchant-links&amp;how=pickup&amp;utm_medium=localmarketing&amp;utm_source=widget&amp;utm_campaign=udon--capitol-hill-3632&amp;utm_term=seattle&amp;utm_content=udon--capitol-hill-3632&amp;cvosrc=localmarketing.widget.udon--capitol-hill-3632&amp;cvo_campaign=udon--capitol-hill-3632&amp;cav_medium=widget&amp;cav_source=udon--capitol-hill-3632"><img src="https://udonseattle.files.wordpress.com/2017/04/orderpickup.jpg?w=196" width="196" height="46" srcset="https://udonseattle.files.wordpress.com/2017/04/orderpickup.jpg?w=196&amp;zoom=2 2x" src-orig="https://udonseattle.files.wordpress.com/2017/04/orderpickup.jpg?w=640" scale="2"/></a>&nbsp; &nbsp; &nbsp;&nbsp;
-                	<a href="http://www.bitesquad.com/food/u-don-capitol-hill/2366"><img data-attachment-id="1647" data-permalink="https://freshudon.com/home/button-2/" data-orig-file="https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=194&amp;h=52" data-orig-size="250,67" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="button-2" data-image-description="" data-medium-file="https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=194&amp;h=52?w=250" data-large-file="https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=194&amp;h=52?w=250" class="alignnone wp-image-1647" src="https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=194&amp;h=52" alt="" width="194" height="52" srcset="https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=194&amp;h=52 194w, https://udonseattle.files.wordpress.com/2011/07/button-2.png?w=150&amp;h=40 150w, https://udonseattle.files.wordpress.com/2011/07/button-2.png 250w" sizes="(max-width: 194px) 100vw, 194px"/></a>
-                </p>
+            <div className="container initial-page text-center">
+                <h2 className="user-settings">Change Password</h2>
+                <form onSubmit={this.handlePasswordChange}>
+                    <div className="form-group">
+                        <input className="form-control ml-auto mr-auto" id="oldPassword" type="password"
+                            placeholder="Enter your old password"
+                            value={this.state.oldPassword}
+                            onInput={event => this.setState({ oldPassword: event.target.value })}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control ml-auto mr-auto" id="newPassword" type="password"
+                            placeholder="Enter your new password"
+                            value={this.state.newPassword}
+                            onInput={event => this.setState({ newPassword: event.target.value })}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control ml-auto mr-auto" id="confirmPassword" type="password"
+                            placeholder="Confirm your new password"
+                            value={this.state.confirmPassword}
+                            onInput={event => this.setState({ confirmPassword: event.target.value })}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <button className="btn settings-btn" type="submit">Update Password</button>
+                    </div>
+                </form>
+                <h2 className="user-settings user-delete">Delete Account</h2>
+                <p>Once you delete your account, there is no going back. Please be certain.</p>
+                <form onSubmit={this.handleDelete}>
+                    <button className="btn settings-btn delete-btn" data-toggle="modal" data-target="#deleteAccount" type="submit">Delete Account</button>
+                    <div className="center">
+                        <div className="modal fade" id="deleteAccount" tabIndex="-1" role="dialog" aria-labelledby="DeleteAccountLabel" aria-hidden="true">
+                            <div className="modal-dialog" role="document">
+                                <div className="modal-content">
+                                    <div id="modalHeader" className="modal-header">
+                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div id="modalBody" className="modal-body">
+                                        <h3>Are you sure you want to do this?</h3>
+                                        <h3>All your data will be permanently deleted.</h3>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-success" onClick={() => this.handleDelete()}>Save</button>
+                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <input className="hide" type="file" accept="image/*" required
+                                        ref={imageInput => this.imageInput = imageInput}
+                                        onChange={(event) => this.handleUploadImage(event)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         );
     }
