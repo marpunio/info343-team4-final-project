@@ -4,7 +4,7 @@ import React from 'react';
 export default class MenuPage extends React.Component {
     render() {
         return(
-            <div className="container-1">
+            <div className="container-1 d-flex flex-wrap">
                 <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>PICK YOUR FAVORITE <span className="udon-red">NOODLE!</span></h1>
                 <div className="udon-title-1">Soup Udon
                     <div className="menu-japanese col-md-6">かけうどん</div>
@@ -65,11 +65,44 @@ export default class MenuPage extends React.Component {
                     <div className="menu-desc">Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!</div>
                     <img src="freshudon12.png" alt="udon12"/>
                 </div>
-                <h2 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>ADD YOUR FAVORITE<span className="udon-red"> TOPPINGS &amp; SIDES!</span></h2>
-                    <div className="container">
+                <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>ADD YOUR FAVORITE<span className="udon-red"> TOPPINGS &amp; SIDES!</span></h1>
+                    <div className="tempura  d-flex flex-wrap">
                         <div class>Tempura</div>
+                        <div class="menu-japanese">天ぷら</div>
+                        <img src="tempura.png" alt="tempura"/>
                     </div>
-            </div>
+                    <div className="kaki-age d-flex flex-wrap">
+                        <div>Kaki-Age</div>
+                        <div class="menu-japanese">かき揚げ</div>
+                        <img src="kakiage.png" alt="kakiage"/>
+                    </div>
+                    <div className="karaage  d-flex flex-wrap">
+                        <div>Karaage</div>
+                        <div class="menu-japanese">唐揚げ</div>
+                        <img src="karaange.png" alt="karaange"/>
+                    </div>
+                    <div className="onigiri">
+                        <div>Onigiri</div>
+                        <div class="menu-japanese">おむすび</div>
+                        <img src="onigiri.png" alt="inigiri"/>
+                    </div>
+                <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>ADD A<span className="udon-red"> DRINK &amp; DESSERT!</span></h1>
+                <div className="extras  d-flex flex-wrap">
+                        <div>Fountain Drink</div>
+                        <div className="menu-japanese">お飲物</div>
+                        <img src="fountaindrink.png" alt="fountaindrink"/>
+                        <div>Specialty Drink</div>
+                        <div className="menu-japanese">お飲物</div>
+                        <img src="specialitydrink.png" alt="special"/>
+                        <div>Cake Slice</div>
+                        <div class="menu-japanese">デザート</div>
+                        <img src="cake.png" alt="cake"/>
+                        <div>Flan/Purin</div>
+                        <div class="menu-japanese">デザート</div>
+                        <img src="flan.png" alt="flan"/>
+                </div>
+
+        </div>
         );
     }
 }
