@@ -4,15 +4,15 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import Cart from './components/Cart';
-import ContactPage from './components/ContactPage';
+import Contact from './components/ContactPage';
 import Footer from './components/Footer';
-import HomePage from './components/HomePage';
-import Mission from './components/Mission';
-import MenuPage from './components/MenuPage';
+import Home from './components/HomePage';
+import Mission from './components/MissionPage';
+import Menu from './components/MenuPage';
 import NavBar from './components/NavBar';
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
-import UserSettings from './components/UserSettings';
+import SignUp from './components/SignUpPage';
+import SignIn from './components/SignInPage';
+import UserSettings from './components/UserSettingPage';
 import constants from './components/constants';
 import './App.css';
 
@@ -51,11 +51,11 @@ class App extends Component {
 				<Router>
 					<Switch>
 						<Route exact path={constants.routes.cart} component={Cart} />
-						<Route exact path={constants.routes.contact} component={ContactPage} />
-						<Route exact path={constants.routes.home} component={HomePage} />
+						<Route exact path={constants.routes.contact} component={Contact} />
+						<Route exact path={constants.routes.home} component={Home} />
 						<Route exact path={constants.routes.menu}
 							render={
-								props => <MenuPage {...props} user={this.state.user} privilege={this.state.privilege} />
+								props => <Menu {...props} user={this.state.user} privilege={this.state.privilege} />
 							}
 						/>
 						<Route exact path={constants.routes.mission} component={Mission} />
@@ -70,7 +70,7 @@ class App extends Component {
 							}
 						/>
 						<Route exact path={constants.routes.settings} component={UserSettings} />
-						<Route component={HomePage} />
+						<Route component={Home} />
 					</Switch>
 				</Router>
 				<Footer />

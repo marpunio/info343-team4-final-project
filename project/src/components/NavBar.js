@@ -3,7 +3,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import constants from './constants';
-import '../css/NavBar.css';
 
 export default class NavBar extends React.Component {
     render() {

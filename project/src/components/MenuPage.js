@@ -3,7 +3,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import "firebase/storage";
-import '../css/MenuPage.css';
 
 export default class MenuPage extends React.Component {
     constructor() {
@@ -14,8 +13,6 @@ export default class MenuPage extends React.Component {
     }
 
     render() {
-        console.log(this.props.privilege)
-        console.log(this.props.user)
         return (
             <div className="menu-view bg-light py-2">
                 <h1 className="my-2 text-center selection-1 barlow">T h e  &nbsp; <span className="udon-red">S e l e c t i o n</span></h1>
