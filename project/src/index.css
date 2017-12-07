@@ -94,8 +94,19 @@ div.udon-red.menu-header {
 	float: center;
 }
 
+.selection-1 {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+.selection-2 {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-weight: bold;
+}
+
 .menu-desc {
-    width: 125px;
+    width: 200px;
     margin-top: 2px;
     font-size: 12px;
     font-weight: 400;
@@ -142,4 +153,11 @@ div.udon-red.menu-header {
 
 h2 {
 	
+}
+
+
+@media (max-width: 768px) {
+	.navbar {
+		display: none;
+	}
 }

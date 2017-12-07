@@ -4,7 +4,7 @@ import '../css/HomePage.css';
 export default class HomePage extends React.Component {
     render() {
         return (
-            <div className="container align-items-center">
+            <div className="mt-2 container align-items-center">
                 <div className="d-flex flex-nowrap justify-content-center">
                     <img id="logo-bowl" src="https://i.imgur.com/bL3Puos.png" alt="" />
                     <img src="https://udonseattle.files.wordpress.com/2011/12/logo-bowl.png" alt="" />
