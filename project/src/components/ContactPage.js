@@ -48,7 +48,7 @@ export default class ContactPage extends React.Component {
                     <h1 className="text-center barlow">Business Hours:</h1>
                     <div className="container d-flex flex-no-wrap justify-content-center">
                         <p className="mx-3 barlow">
-                            <strong>Our <span class="udon-red">NEW</span> Capitol Hill location:</strong><br/>
+                            <strong>Our <span className="udon-red">NEW</span> Capitol Hill location:</strong><br/>
                             <span className="px-2"><strong>Mon – Sat</strong>: 11:30am – 10:00pm</span><br/>
                             <span className="px-2"><strong>Sun</strong>: 11:30am – 9:30pm</span><br/>
                             <br/>
@@ -57,7 +57,7 @@ export default class ContactPage extends React.Component {
                             <span className="px-2"><strong>Fri &amp; Sat</strong>: 11:30am – 10:00pm</span><br/>
                         </p>
                         <p className="mx-3 barlow">
-                            <strong><span class="udon-red">Holiday hours</span> at both locations:</strong><br/>
+                            <strong><span className="udon-red">Holiday hours</span> at both locations:</strong><br/>
                             <span className="px-2"><strong>Thanksgiving Day (11/23)</strong>: Closed all day</span><br/>
                             <span className="px-2"><strong>Black Friday (11/24)</strong>: Closed all day</span><br/>
                             <span className="px-2"><strong>Christmas Eve (12/24)</strong>: 11:30am – 8:30pm</span><br/>
@@ -76,19 +76,19 @@ export default class ContactPage extends React.Component {
                         <p >Do you have a comment or question for the management of U:Don?
                         Please complete this form and we will do our best to respond within 24-48 hours.
                         We look forward to hearing from you!</p>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input className="form-control" type="text" placeholder="Name" autoComplete="off" required
                                 value={this.state.name}
                                 onInput={event => this.handleInputName(event)}
                             />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <input className="form-control" type="Email" placeholder="Email" autoComplete="off" required
                                 value={this.state.email}
                                 onInput={event => this.handleInputEmail(event)}
                             />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <textarea className="form-control" type="text" placeholder="Comment or Inquiry..." rows="10" required minLength="20"
                                 value={this.state.inquiry}
                                 onInput={event => this.handleInputInquiry(event)}

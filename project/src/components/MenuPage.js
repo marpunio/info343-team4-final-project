@@ -155,15 +155,15 @@ class AddMenuItem extends React.Component {
                             </div>
                             <div id="modalBody" className="modal-body">
                                 <h2>Add New Menu Item</h2>
-                                <label class="custom-control custom-radio">
-                                    <input id="radio1" name="radio" type="radio" class="custom-control-input" />
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Udon</span>
+                                <label className="custom-control custom-radio">
+                                    <input id="radio1" name="radio" type="radio" className="custom-control-input" />
+                                    <span className="custom-control-indicator"></span>
+                                    <span className="custom-control-description">Udon</span>
                                 </label>
-                                <label class="custom-control custom-radio">
-                                    <input id="radio2" name="radio" type="radio" class="custom-control-input" />
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Side/Dessert/Drink</span>
+                                <label className="custom-control custom-radio">
+                                    <input id="radio2" name="radio" type="radio" className="custom-control-input" />
+                                    <span className="custom-control-indicator"></span>
+                                    <span className="custom-control-description">Side/Dessert/Drink</span>
                                 </label>
                                 <div className="form-group">
                                     <input type="text" className="form-control" placeholder="Item Name" required
@@ -185,7 +185,7 @@ class AddMenuItem extends React.Component {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" class="btn btn-success" onClick={() => this.handleAddMenuItem()}>Save</button>
+                                <button type="button" className="btn btn-success" onClick={() => this.handleAddMenuItem()}>Save</button>
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>

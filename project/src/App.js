@@ -12,6 +12,7 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import UserSettings from './components/UserSettings';
 import constants from './components/constants';
+import './App.css';
 
 class App extends Component {
 	constructor(props) {
@@ -43,7 +44,7 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="page-view">
 				<NavBar privilege={this.state.privilege} user={this.state.user} />
 				<Router>
 					<Switch>

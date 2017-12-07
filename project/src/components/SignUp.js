@@ -84,7 +84,7 @@ export default class SignUp extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <input className="form-control ml-auto mr-auto" id="password" type="password"
+                        <input className="form-control ml-auto mr-auto" id="confirmPassword" type="password"
                             placeholder="Confirm your password"
                             value={this.state.passwordConfirmation}
                             onInput={event => this.setState({ passwordConfirmation: event.target.value })}
