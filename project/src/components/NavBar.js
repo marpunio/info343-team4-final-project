@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
                         </li>
                         {
                             this.props.user ?
-                                <Dropdown /> :
+                                <Dropdown user={this.props.user} /> :
                                 <SignRedirect />
                         }
                     </ul>
@@ -55,6 +55,7 @@ class Dropdown extends React.Component {
                     User Settings
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <p className="dropdown-item login-info barlow">Signed in as <strong>{this.props.user.displayName}</strong></p>
                     <a className="dropdown-item barlow" href={constants.routes.cart}>Order</a>
                     <a className="dropdown-item barlow" href={constants.routes.settings}>Settings</a>
                     <a type="submit" className="dropdown-item barlow" onClick={this.handleSignOut}>Sign Out</a>

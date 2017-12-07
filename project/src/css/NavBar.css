@@ -26,6 +26,11 @@ nav img {
     cursor: pointer;
 }
 
+.login-info {
+	border-bottom: 1px #e1e4e8 solid;
+	padding-bottom: 8px;
+}
+
 @media (max-width: 768px) {
 	.navbar {
 		display: none;

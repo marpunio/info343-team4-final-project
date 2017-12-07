@@ -78,7 +78,7 @@ export default class MenuPage extends React.Component {
                     <MenuItem soupName="Flan/Purin" japaneseName="デザート"
                         src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin" />
                 </div>
-                {this.props.user ? <AddMenuItem /> : undefined}
+                {this.props.privilege==="admin" ? <AddMenuItem /> : undefined}
             </div>
         );
     }
