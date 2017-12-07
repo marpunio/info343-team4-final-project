@@ -6,6 +6,10 @@ nav img {
 	height: 40px;
 }
 
+#dropdown {
+	list-style: none;
+}
+
 .nav-item {
 	font-size: 20px;
 	font-family: "Barlow Condensed";

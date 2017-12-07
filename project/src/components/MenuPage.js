@@ -6,12 +6,21 @@ import "firebase/storage";
 import '../css/MenuPage.css';
 
 export default class MenuPage extends React.Component {
+<<<<<<< HEAD
     constructor() {
         super();
         this.state = {
             menuItems: {}
         };
     }
+=======
+    render() {
+        return(
+            <div className="bg-light py-2">
+                <h1 className="my-2 text-center selection-1 barlow">T h e  &nbsp; <span class="udon-red">S e l e c t i o n</span></h1>
+                <h3 className="text-center selection-2 barlow">Noodles for every occasion</h3>
+                <div className="barlow container d-flex flex-wrap justify-content-center">
+>>>>>>> 896fdaee7ec649b59ef109799340cf525829e9fe
 
     render() {
         return (
@@ -56,12 +65,18 @@ export default class MenuPage extends React.Component {
                         descr="Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!"
                         src="freshudon12.png" alt="udon12" />
                 </div>
+<<<<<<< HEAD
                 <br />
                 <br />
+=======
+                <br/>
+                <br/>
+>>>>>>> 896fdaee7ec649b59ef109799340cf525829e9fe
 
                 <h2 className="text-center selection-2 barlow">Add a <span className="font-weight-bold">CRUNCH</span> or something <span className="font-weight-bold">SWEET</span></h2>
                 <div className="barlow container d-flex flex-wrap justify-content-center text-center">
                     <MenuItem soupName="Tempura" japaneseName="天ぷら"
+<<<<<<< HEAD
                         src="https://udonseattle.files.wordpress.com/2011/12/menu-tempura.png?w=170&zoom=2" alt="tempura" />
                     <MenuItem soupName="Kaki-Age" japaneseName="かき揚げ"
                         src="https://udonseattle.files.wordpress.com/2011/12/menu-kakiage.png?w=170&zoom=2" alt="kakiage" />
@@ -79,6 +94,26 @@ export default class MenuPage extends React.Component {
                         src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin" />
                 </div>
                 <AddMenuItem />
+=======
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-tempura.png?w=170&zoom=2" alt="tempura"/>
+                    <MenuItem soupName="Kaki-Age" japaneseName="かき揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-kakiage.png?w=170&zoom=2" alt="kakiage"/>
+                    <MenuItem soupName="Kaarage" japaneseName="唐揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-karaage.png?w=170&zoom=2" alt="kaarage"/>
+                    <MenuItem soupName="Onigiri" japaneseName="おむすび"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-onigiri2.png?w=170&zoom=2" alt="onigiri"/>
+                    <MenuItem soupName="Fountain Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-fountain-drink.png?w=170&zoom=2" alt="drink"/>
+                    <MenuItem soupName="Specialty Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-specialty-drink.png?w=170&zoom=2" alt="specialty drink"/>
+                    <MenuItem soupName="Cake Slice" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-cake.png?w=170&zoom=2" alt="cake"/>
+                    <MenuItem soupName="Flan/Purin" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin"/>
+                    
+                    
+                </div>
+>>>>>>> 896fdaee7ec649b59ef109799340cf525829e9fe
             </div>
         );
     }
@@ -90,7 +125,7 @@ class MenuItem extends React.Component {
             <div className="menu-item px-2 my-2 mx-2 col-lg-3">
                 <img className="menu-pic" src={this.props.src} alt={this.props.alt} />
                 <div className="menu-japanese">
-                    <p className="my-1">{this.props.soupName}</p>
+                    <p className="my-1 font-weight-bold">{this.props.soupName}</p>
                     <p className="my-0">{this.props.japaneseName}</p>
                     <p className="menu-desc my-0">{this.props.descr}</p>
                 </div>

@@ -4,6 +4,11 @@ body {
   font-family: sans-serif;
 }
 
+#business-hours {
+	background-color: rgba(255, 0, 0, 0.1);
+	padding: 8px;
+}
+
 #icons {
 	padding-left: 22px;
 }
