@@ -14,18 +14,18 @@ export default class HomePage extends React.Component {
                 </div>
                 <div id="steps" className="d-flex flex-nowrap justify-content-center my-2">
                     <div className="steps mx-4">
-                        <p>1. <span class="udon-red">NOODLE!</span></p>
-                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-kitsune.png?w=170"/>
+                        <p>1. <span className="udon-red">NOODLE!</span></p>
+                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-kitsune.png?w=170" alt="" />
                         <p><i>Kitsune Udon</i></p>
                     </div>
                     <div className="steps mx-4">
-                        <p>2. <span class="udon-red">TOPPINGS & SIDES!</span></p>
-                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-karaage.png?w=170"/>
+                        <p>2. <span className="udon-red">TOPPINGS & SIDES!</span></p>
+                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-karaage.png?w=170" alt="" />
                         <p><i>Karaage</i></p>
                     </div>
                     <div className="steps mx-4">
                         <p>3. <span className="udon-red">DRINK or DESSERT!</span></p>
-                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-specialty-drink.png?w=170"/>
+                        <img src="https://udonseattle.files.wordpress.com/2011/12/menu-specialty-drink.png?w=170" alt="" />
 
                         <p><i>Specialty Drink</i></p>
                     </div>
