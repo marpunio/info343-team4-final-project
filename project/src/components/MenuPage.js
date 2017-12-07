@@ -1,108 +1,215 @@
 import React from 'react';
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import "firebase/storage";
 
 export default class MenuPage extends React.Component {
-    render() {
-        return(
-            <div className="container-1 d-flex flex-wrap">
-                <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>PICK YOUR FAVORITE <span className="udon-red">NOODLE!</span></h1>
-                <div className="udon-title-1">Soup Udon
-                    <div className="menu-japanese col-md-6">かけうどん</div>
-                    <p className="menu-desc">Udon noodles served hot in our original dashi broth with sliced green onions and grated fresh ginger. Vegetarian broth also available.</p>
-                    <img src="freshudon1.png" alt="udon1"/>
-                </div>
-                <div className="udon-title-2">Sauce Udon
-                    <div className="menu-japanese col-md-6">ぶっかけうどん</div>
-                    <div className="menu-desc">Udon noodles served hot or chilled and lightly dressed with our dashi-shoyu sauce, sliced green onions, fresh grated ginger and Ten-kasu.</div>
-                    <img src="freshudon2.png" alt="udon2"/>
-                </div>
-                <div className="udon-title-3">Zaru Udon
-                    <div className="menu-japanese">ざるうどん</div>
-                    <div className="menu-desc">Udon noodles served chilled with a frangrant soy dipping sauce, sliced green onion, grated fresh ginger, Ten-kasu and wasabi (upon request) to add to your dipping sauce.</div>
-                    <img src="freshudon3.png" alt="udon3"/>
-                </div>
-                <div className="udon-title-4">On-tama Udon
-                    <div className="menu-japanese">温玉ぶっかけうどん</div>
-                    <div className="menu-desc">Udon noodles served hot or chilled and lightly dressed with our dashi-shoyu sauce, an On-tama (hot spring egg), sliced green onion and grated fresh ginger.</div>
-                    <img src="freshudon4.png" alt="udon4"/>
-                </div>
-                <div className="udon-title-5">Oroshi Udon</div>
-                    <div className="menu-japanese">おろしぶっかけうどん</div>
-                    <div className="menu-desc">Udon noodles served hot or chilled with generous helpings of grated daikon radish, our dashi-shoyu sauce, sliced green	onions, grated fresh ginger and a lemon wedge for squeezing.</div>
-                    <img src="freshudon5.png" alt="udon5"/>
-                <div className="udon-title-6">Niku Udon
-                    <div className="menu-japanese">肉うどん</div>
-                    <div className="menu-desc">Udon noodles served as soup or sauce noodles with sukiyaki braised beef, onions, sliced green onions and grated fresh ginger.</div>
-                    <img src="freshudon6.png" alt="udon6"/>
-                </div>
-                <div className="udon-title-7">Kitsune Udon
-                    <div className="menu-japanese">きつねうどん</div>
-                    <div className="menu-desc">Udon noodles served hot with our extra thick fried and marinated tofu (Atsu-age), sliced green onions &amp; grated fresh ginger.</div>
-                    <img src="freshudon7.png" alt="udon7"/>
-                </div>
-                <div className="udon-title-8">Curry Udon
-                    <div className="menu-japanese">カレーうどん</div>
-                    <div className="menu-desc">Udon noodles served in our spicy Japanese curry dashi soup with beef, onions, and sliced green onions.</div>
-                    <img src="freshudon8.png" alt="udon8"/>
-                </div>
-                <div className="udon-title-9">Tan Tan Udon
-                    <div className="menu-japanese">担々うどん</div>
-                    <div className="menu-desc">Udon noodles served hot or chilled, topped with our spicy Tan Tan pork and sliced green onions.</div>
-                    <img src="freshudon9.png" alt="udon9"/>
-                </div>
-                <div className="udon-title-10">Ume Niku Oroshi
-                    <div className="menu-japanese">梅肉おろしうどん</div>
-                    <div className="menu-desc">Udon noodles served with sukiyaki braised beef, topped with sliced green onions, grated fresh ginger and minced pickled umeboshi plum.</div>
-                    <img src ="freshudon10.png" alt="udon10" />
-                </div>
-                <div className="udon-title-11">Goma Zaru Udon
-                    <div className="menu-japanese">ごま笊うどん</div>
-                    <div className="menu-desc">Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce and sliced green onions on the side. Have it with or without chili oil.</div>
-                    <img src="freshudon11.png" alt="udon11"/>
-                </div>
-                <div className="udon-title-12">Tan Tan Goma Zaru
-                    <div className="menu-japanese">担々ごま笊うどん</div>
-                    <div className="menu-desc">Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!</div>
-                    <img src="freshudon12.png" alt="udon12"/>
-                </div>
-                <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>ADD YOUR FAVORITE<span className="udon-red"> TOPPINGS &amp; SIDES!</span></h1>
-                    <div className="tempura  d-flex flex-wrap">
-                        <div class>Tempura</div>
-                        <div class="menu-japanese">天ぷら</div>
-                        <img src="tempura.png" alt="tempura"/>
-                    </div>
-                    <div className="kaki-age d-flex flex-wrap">
-                        <div>Kaki-Age</div>
-                        <div class="menu-japanese">かき揚げ</div>
-                        <img src="kakiage.png" alt="kakiage"/>
-                    </div>
-                    <div className="karaage  d-flex flex-wrap">
-                        <div>Karaage</div>
-                        <div class="menu-japanese">唐揚げ</div>
-                        <img src="karaange.png" alt="karaange"/>
-                    </div>
-                    <div className="onigiri">
-                        <div>Onigiri</div>
-                        <div class="menu-japanese">おむすび</div>
-                        <img src="onigiri.png" alt="inigiri"/>
-                    </div>
-                <h1 colspan="4" align="center" className="menu-header" style={{paddingBottom: 15 + "px"}}>ADD A<span className="udon-red"> DRINK &amp; DESSERT!</span></h1>
-                <div className="extras  d-flex flex-wrap">
-                        <div>Fountain Drink</div>
-                        <div className="menu-japanese">お飲物</div>
-                        <img src="fountaindrink.png" alt="fountaindrink"/>
-                        <div>Specialty Drink</div>
-                        <div className="menu-japanese">お飲物</div>
-                        <img src="specialitydrink.png" alt="special"/>
-                        <div>Cake Slice</div>
-                        <div class="menu-japanese">デザート</div>
-                        <img src="cake.png" alt="cake"/>
-                        <div>Flan/Purin</div>
-                        <div class="menu-japanese">デザート</div>
-                        <img src="flan.png" alt="flan"/>
-                </div>
+    constructor() {
+        super();
+        this.state = {
+            menuItems: {}
+        };
+    }
 
-        </div>
+    render() {
+        return (
+            <div className="menu-view bg-light py-2">
+                <h1 className="my-2 text-center selection-1 barlow">T h e  &nbsp; <span className="udon-red">S e l e c t i o n</span></h1>
+                <h3 className="text-center selection-2 barlow">Noodles for every occasion</h3>
+                <div className="barlow container d-flex flex-wrap justify-content-center text-center">
+                    <MenuItem udonClass="udon-title-1" soupName="Soup Udon" japaneseName="かけうどん"
+                        descr="Udon noodles served hot in our original dashi broth with sliced green onions and grated fresh ginger. Vegetarian broth also available."
+                        src="freshudon1.png" alt="udon1" />
+                    <MenuItem udonClass="udon-title-2" soupName="Sauce Udon" japaneseName="ぶっかけうどん"
+                        descr="Udon noodles served hot or chilled and lightly dressed with our dashi-shoyu sauce, sliced green onions, fresh grated ginger and Ten-kasu."
+                        src="freshudon2.png" alt="udon2" />
+                    <MenuItem udonClass="udon-title-3" soupName="Zaru Udon" japaneseName="ざるうどん"
+                        descr="Udon noodles served chilled with a frangrant soy dipping sauce, sliced green onion, grated fresh ginger, Ten-kasu and wasabi (upon request) to add to your dipping sauce."
+                        src="freshudon3.png" alt="udon3" />
+                    <MenuItem udonClass="udon-title-4" soupName="On-tama Udon" japaneseName="温玉ぶっかけうどん"
+                        descr="Udon noodles served hot or chilled and lightly dressed with our dashi-shoyu sauce, an On-tama (hot spring egg), sliced green onion and grated fresh ginger."
+                        src="freshudon4.png" alt="udon4" />
+                    <MenuItem udonClass="udon-title-5" soupName="Oroshi Udon" japaneseName="おろしぶっかけうどん"
+                        descr="Udon noodles served hot or chilled with generous helpings of grated daikon radish, our dashi-shoyu sauce, sliced green   onions, grated fresh ginger and a lemon wedge for squeezing."
+                        src="freshudon5.png" alt="udon5" />
+                    <MenuItem udonClass="udon-title-6" soupName="Niku Udon" japaneseName="肉うどん"
+                        descr="Udon noodles served as soup or sauce noodles with sukiyaki braised beef, onions, sliced green onions and grated fresh ginger."
+                        src="freshudon6.png" alt="udon6" />
+                    <MenuItem udonClass="udon-title-7" soupName="Kitsune Udon" japaneseName="きつねうどん"
+                        descr="Udon noodles served hot with our extra thick fried and marinated tofu (Atsu-age), sliced green onions &amp; grated fresh ginger."
+                        src="freshudon7.png" alt="udon7" />
+                    <MenuItem udonClass="udon-title-8" soupName="Curry Udon" japaneseName="カレーうどん"
+                        descr="Udon noodles served in our spicy Japanese curry dashi soup with beef, onions, and sliced green onions."
+                        src="freshudon8.png" alt="udon8" />
+                    <MenuItem udonClass="udon-title-9" soupName="Tan Tan Udon" japaneseName="担々うどん"
+                        descr="Udon noodles served hot or chilled, topped with our spicy Tan Tan pork and sliced green onions."
+                        src="freshudon9.png" alt="udon9" />
+                    <MenuItem udonClass="udon-title-10" soupName="Ume Niku Oroshi" japaneseName="梅肉おろしうどん"
+                        descr="Udon noodles served with sukiyaki braised beef, topped with sliced green onions, grated fresh ginger and minced pickled umeboshi plum."
+                        src="freshudon10.png" alt="udon10" />
+                    <MenuItem udonClass="udon-title-11" soupName="Goma Zaru Udon" japaneseName="ごま笊うどん"
+                        descr="Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce and sliced green onions on the side. Have it with or without chili oil."
+                        src="freshudon11.png" alt="udon11" />
+                    <MenuItem udonClass="udon-title-12" soupName="Tan Tan Goma Zaru" japaneseName="担々ごま笊うどん"
+                        descr="Chilled fresh udon noodles served on a zaru mat with our signature sesame dipping sauce, sliced green onions, and a spicy Tan Tan pork on the side. For the spicy food lovers!"
+                        src="freshudon12.png" alt="udon12" />
+                </div>
+                <br />
+                <br />
+
+                <h2 className="text-center selection-2 barlow">Add a <span className="font-weight-bold">CRUNCH</span> or something <span className="font-weight-bold">SWEET</span></h2>
+                <div className="barlow container d-flex flex-wrap justify-content-center text-center">
+                    <MenuItem soupName="Tempura" japaneseName="天ぷら"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-tempura.png?w=170&zoom=2" alt="tempura" />
+                    <MenuItem soupName="Kaki-Age" japaneseName="かき揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-kakiage.png?w=170&zoom=2" alt="kakiage" />
+                    <MenuItem soupName="Kaarage" japaneseName="唐揚げ"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-karaage.png?w=170&zoom=2" alt="kaarage" />
+                    <MenuItem soupName="Onigiri" japaneseName="おむすび"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-onigiri2.png?w=170&zoom=2" alt="onigiri" />
+                    <MenuItem soupName="Fountain Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-fountain-drink.png?w=170&zoom=2" alt="drink" />
+                    <MenuItem soupName="Specialty Drink" japaneseName="お飲物"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-specialty-drink.png?w=170&zoom=2" alt="specialty drink" />
+                    <MenuItem soupName="Cake Slice" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-cake.png?w=170&zoom=2" alt="cake" />
+                    <MenuItem soupName="Flan/Purin" japaneseName="デザート"
+                        src="https://udonseattle.files.wordpress.com/2011/12/menu-flan.png?w=170&zoom=2" alt="flan/purin" />
+                </div>
+                {this.props.user ? <AddMenuItem /> : undefined}
+            </div>
+        );
+    }
+}
+
+class MenuItem extends React.Component {
+    render() {
+        return (
+            <div className="menu-item px-2 my-2 mx-2 col-lg-3">
+                <img className="menu-pic" src={this.props.src} alt={this.props.alt} />
+                <div className="menu-japanese">
+                    <p className="my-1 font-weight-bold">{this.props.soupName}</p>
+                    <p className="my-0">{this.props.japaneseName}</p>
+                    <p className="menu-desc my-0">{this.props.descr}</p>
+                </div>
+            </div>
+        );
+    }
+}
+
+class AddMenuItem extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            itemName: '',
+            japaneseName: '',
+            description: '',
+            imageSource: ''
+        };
+        this.handleInputItemName = this.handleInputItemName.bind(this);
+        this.handleInputJapaneseName = this.handleInputJapaneseName.bind(this);
+        this.handleInputDescription = this.handleInputDescription.bind(this);
+        this.handleAddMenuItem = this.handleAddMenuItem.bind(this);
+
+    }
+
+    handleInputItemName(event) {
+        this.setState({ itemName: event.target.value });
+    }
+
+    handleInputJapaneseName(event) {
+        this.setState({ japaneseName: event.target.value });
+    }
+
+    handleInputDescription(event) {
+        this.setState({ description: event.target.value });
+    }
+
+    handleUploadImage(event) {
+        let file = event.target.files[0];
+        console.log(file);
+        if (file) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file)
+            reader.onload = () => this.foodImage.src = reader.result;
+        }
+    }
+
+    handleAddMenuItem() {
+        let key = firebase.database().ref().child('menu/').push().key;
+        let menuData = {
+            itemName: this.state.itemName,
+            japaneseName: this.state.japaneseName,
+            description: this.state.description,
+            imageSource: this.state.imageSource
+        };
+        let updates = {};
+        updates['menu/' + key] = menuData;
+        firebase.database().ref().update(updates);
+        this.setState({ itemName: '', japaneseName: '', description: '', imageSource: '' });
+    }
+
+    render() {
+        return (
+            <div className="center">
+                <button className="btn btn-dark" data-toggle="modal" data-target="#addMenuItem">Add Menu Item</button>
+                <div className="modal fade" id="addMenuItem" tabIndex="-1" role="dialog" aria-labelledby="addMenuItemLabel" aria-hidden="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div id="modalHeader" className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div id="modalBody" className="modal-body">
+                                <h2>Add New Menu Item</h2>
+                                <img className="food-item" alt="Food Item" ref={foodImage => this.foodImage = foodImage} />
+                                <button className="btn btn-dark d-block mt-3 mb-3 mx-auto" onClick={() => this.imageInput.click()}>Add Image</button>
+                                <label className="custom-control custom-radio">
+                                    <input id="radio1" name="radio" type="radio" className="custom-control-input" />
+                                    <span className="custom-control-indicator"></span>
+                                    <span className="custom-control-description">Udon</span>
+                                </label>
+                                <label className="custom-control custom-radio">
+                                    <input id="radio2" name="radio" type="radio" className="custom-control-input" />
+                                    <span className="custom-control-indicator"></span>
+                                    <span className="custom-control-description">Side/Dessert/Drink</span>
+                                </label>
+                                <div className="form-group">
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Item Name" required
+                                        value={this.state.itemName}
+                                        onInput={event => this.handleInputItemName(event)}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <input type="text" className="form-control" placeholder="Japanese Name" required
+                                        value={this.state.japaneseName}
+                                        onInput={event => this.handleInputJapaneseName(event)}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <textarea className="form-control" placeholder="Description" rows="4"
+                                        value={this.state.description}
+                                        onInput={event => this.handleInputDescription(event)}>
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-success" onClick={() => this.handleAddMenuItem()}>Save</button>
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            <input className="hide" type="file" accept="image/*" required
+                                ref={imageInput => this.imageInput = imageInput}
+                                onChange={(event) => this.handleUploadImage(event)}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         );
     }
 }

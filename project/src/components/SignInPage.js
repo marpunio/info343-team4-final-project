@@ -15,6 +15,18 @@ export default class SignIn extends React.Component {
         this.handleSignIn = this.handleSignIn.bind(this);
     }
 
+    componentDidMount() {
+        this.authUnsub = firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                this.props.history.push(constants.routes.home)
+            }
+        });
+    }
+
+    componentWillUnmount() {
+        this.authUnsub();
+    }
+
     handleSignIn(event) {
         event.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -49,10 +61,10 @@ export default class SignIn extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-primary" type="submit">Sign In</button>
+                        <button className="btn btn-dark" type="submit">Sign In</button>
                     </div>
                 </form>
-                <p>
+                <p>''
                     Don't yet have an account? <Link to={constants.routes.signup}>Sign Up!</Link>
                 </p>
             </div>
