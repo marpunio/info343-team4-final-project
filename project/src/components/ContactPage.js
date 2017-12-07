@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import '../css/ContactPage.css';
 
 export default class ContactPage extends React.Component {
     constructor() {
@@ -77,19 +78,19 @@ export default class ContactPage extends React.Component {
                         Please complete this form and we will do our best to respond within 24-48 hours.
                         We look forward to hearing from you!</p>
                         <div className="form-group">
-                            <input className="form-control" type="text" placeholder="Name" autoComplete="off" required
+                            <input className="form-control inquiry-input" type="text" placeholder="Name" autoComplete="off" required
                                 value={this.state.name}
                                 onInput={event => this.handleInputName(event)}
                             />
                         </div>
                         <div className="form-group">
-                            <input className="form-control" type="Email" placeholder="Email" autoComplete="off" required
+                            <input className="form-control inquiry-input" type="Email" placeholder="Email" autoComplete="off" required
                                 value={this.state.email}
                                 onInput={event => this.handleInputEmail(event)}
                             />
                         </div>
                         <div className="form-group">
-                            <textarea className="form-control" type="text" placeholder="Comment or Inquiry..." rows="10" required minLength="20"
+                            <textarea className="form-control inquiry-input" type="text" placeholder="Comment or Inquiry..." rows="10" required minLength="20"
                                 value={this.state.inquiry}
                                 onInput={event => this.handleInputInquiry(event)}
                             />

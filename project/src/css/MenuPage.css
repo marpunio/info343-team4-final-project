@@ -58,11 +58,11 @@ div.udon-red {
     margin: 1rem;
 }
 
-.form-group {
+.center .form-group {
     text-align: center;
 }
 
-.form-control {
+.center .form-control {
     margin: auto;
 }
 
@@ -75,4 +75,12 @@ div.udon-red {
 .center {
     text-align: center; 
     margin-top: 2rem;
+}
+
+.food-item {
+    max-width: 150px;
+}
+
+.hide {
+    display: none;
 }

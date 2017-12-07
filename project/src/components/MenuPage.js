@@ -127,6 +127,16 @@ class AddMenuItem extends React.Component {
         this.setState({ description: event.target.value });
     }
 
+    handleUploadImage(event) {
+        let file = event.target.files[0];
+        console.log(file);
+        if (file) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file)
+            reader.onload = () => this.foodImage.src = reader.result;
+        }
+    }
+
     handleAddMenuItem() {
         let key = firebase.database().ref().child('menu/').push().key;
         let menuData = {
@@ -155,6 +165,8 @@ class AddMenuItem extends React.Component {
                             </div>
                             <div id="modalBody" className="modal-body">
                                 <h2>Add New Menu Item</h2>
+                                <img className="food-item" alt="Food Item" ref={foodImage => this.foodImage = foodImage} />
+                                <button className="btn btn-dark d-block mt-3 mb-3 mx-auto" onClick={() => this.imageInput.click()}>Add Image</button>
                                 <label className="custom-control custom-radio">
                                     <input id="radio1" name="radio" type="radio" className="custom-control-input" />
                                     <span className="custom-control-indicator"></span>
@@ -165,6 +177,8 @@ class AddMenuItem extends React.Component {
                                     <span className="custom-control-indicator"></span>
                                     <span className="custom-control-description">Side/Dessert/Drink</span>
                                 </label>
+                                <div className="form-group">
+                                </div>
                                 <div className="form-group">
                                     <input type="text" className="form-control" placeholder="Item Name" required
                                         value={this.state.itemName}
@@ -188,6 +202,10 @@ class AddMenuItem extends React.Component {
                                 <button type="button" className="btn btn-success" onClick={() => this.handleAddMenuItem()}>Save</button>
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
+                            <input className="hide" type="file" accept="image/*" required
+                                ref={imageInput => this.imageInput = imageInput}
+                                onChange={(event) => this.handleUploadImage(event)}
+                            />
                         </div>
 
                     </div>

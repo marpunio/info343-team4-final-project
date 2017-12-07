@@ -53,7 +53,7 @@ class Dropdown extends React.Component {
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a className="dropdown-item barlow" href={constants.routes.home}>Profile</a>
-                    <a className="dropdown-item barlow" href={constants.routes.settings}>Settings</a>
+                    <a className="dropdown-item barlow" href={constants.routes.settings}>Order</a>
                     <a type="submit" className="dropdown-item barlow" onClick={this.handleSignOut}>Sign Out</a>
                 </div>
             </div>
