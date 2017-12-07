@@ -1,9 +1,14 @@
-nav a:hover {
-	color: black;
-}
-
 nav img {
 	height: 40px;
+}
+
+.nav-link {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color:black;
 }
 
 #dropdown {
@@ -13,7 +18,8 @@ nav img {
 .nav-item {
 	font-size: 20px;
 	font-family: "Barlow Condensed";
-	letter-spacing: .5px;
+    letter-spacing: .5px;
+    cursor: pointer
 }
 
 @media (max-width: 768px) {

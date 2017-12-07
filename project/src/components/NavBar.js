@@ -47,11 +47,11 @@ class Dropdown extends React.Component {
 
     render() {
         return (
-            <div class="dropdown barlow">
-                <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Settings
+            <div className="dropdown">
+                <button className="nav-link barlow dropdown-toggle mx-2" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    User Settings
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a className="dropdown-item barlow" href={constants.routes.home}>Profile</a>
                     <a className="dropdown-item barlow" href={constants.routes.settings}>Settings</a>
                     <a type="submit" className="dropdown-item barlow" onClick={this.handleSignOut}>Sign Out</a>
