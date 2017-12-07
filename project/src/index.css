@@ -12,6 +12,15 @@ footer {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
+#home-page {
+	background-color: blue;
+}
+
+#logo-bowl {
+	max-height: 200px;
+	margin-top: 20px;
+}
+
 #locations {
 	font-size: 14px;
 }
@@ -22,7 +31,9 @@ footer {
 }
 
 nav a {
-	color: lightgrey;	
+	color: lightgrey;
+	font-size: 18px;
+	font-family: lato;	
 }
 
 nav a:hover {
@@ -30,7 +41,7 @@ nav a:hover {
 }
 
 nav img {
-	height: 55px;
+	height: 40px;
 }
 
 .nav-item {
