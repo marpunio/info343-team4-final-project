@@ -16,7 +16,6 @@ export default class SignIn extends React.Component {
         this.handleSignIn = this.handleSignIn.bind(this);
     }
 
-    // figure out how to redirect
     componentDidMount() {
         this.authUnsub = firebase.auth().onAuthStateChanged(user => {
 			if (user) {

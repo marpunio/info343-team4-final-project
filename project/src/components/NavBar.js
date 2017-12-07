@@ -19,6 +19,9 @@ export default class NavBar extends React.Component {
                             <a className="nav-link barlow" href={constants.routes.menu}>Menu</a>
                         </li>
                         <li className="nav-item mx-2">
+                            <a className="nav-link barlow" href={constants.routes.mission}>Our Mission</a>
+                        </li>
+                        <li className="nav-item mx-2">
                             <a className="nav-link barlow" href={constants.routes.contact}>Contact Us</a>
                         </li>
                         {
@@ -42,7 +45,6 @@ class Dropdown extends React.Component {
     handleSignOut(event) {
         event.preventDefault();
         firebase.auth().signOut()
-            .then(this.props.history.push(constants.routes.home))
             .catch(error => this.setState({ errorMessage: error.message }));
     }
 
@@ -53,7 +55,7 @@ class Dropdown extends React.Component {
                     User Settings
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item barlow" href={constants.routes.order}>Order</a>
+                    <a className="dropdown-item barlow" href={constants.routes.cart}>Order</a>
                     <a className="dropdown-item barlow" href={constants.routes.settings}>Settings</a>
                     <a type="submit" className="dropdown-item barlow" onClick={this.handleSignOut}>Sign Out</a>
                 </div>

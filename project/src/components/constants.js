@@ -1,9 +1,10 @@
 export default  {
     routes: {
+        cart: '/cart',
         contact: '/contact',
         home: '/',
+        mission: '/mission',
         menu: '/menu',
-        order: '/order',
         settings: '/settings',
         signup: '/signup',
         signin: '/signin',

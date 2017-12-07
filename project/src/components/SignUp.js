@@ -19,6 +19,18 @@ export default class SignUp extends React.Component {
         this.handleSignUp = this.handleSignUp.bind(this);
     }
 
+    componentDidMount() {
+        this.authUnsub = firebase.auth().onAuthStateChanged(user => {
+			if (user) {
+                this.props.history.push(constants.routes.home)
+            }
+		});
+    }
+
+    componentWillUnmount() {
+        this.authUnsub();
+    }
+
     handleSignUp(event) {
         event.preventDefault();
         if (this.state.password === this.state.passwordConfirmation) {

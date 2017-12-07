@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import Cart from './components/Cart';
 import ContactPage from './components/ContactPage';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import Mission from './components/Mission';
 import MenuPage from './components/MenuPage';
 import NavBar from './components/NavBar';
-import OrderOnline from './components/OrderOnline';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import UserSettings from './components/UserSettings';
@@ -49,6 +50,7 @@ class App extends Component {
 				<NavBar privilege={this.state.privilege} user={this.state.user} />
 				<Router>
 					<Switch>
+						<Route exact path={constants.routes.cart} component={Cart} />
 						<Route exact path={constants.routes.contact} component={ContactPage} />
 						<Route exact path={constants.routes.home} component={HomePage} />
 						<Route exact path={constants.routes.menu}
@@ -56,8 +58,7 @@ class App extends Component {
 								props => <MenuPage {...props} user={this.state.user} />
 							}
 						/>
-						<Route exact path={constants.routes.order} component={OrderOnline} />
-						<Route exact path={constants.routes.settings} component={UserSettings} />
+						<Route exact path={constants.routes.mission} component={Mission} />
 						<Route exact path={constants.routes.signup}
 							render={
 								props => <SignUp {...props} handlePrivilege={this.handlePrivilege} />
@@ -68,6 +69,7 @@ class App extends Component {
 								props => <SignIn {...props} handlePrivilege={this.handlePrivilege} />
 							}
 						/>
+						<Route exact path={constants.routes.settings} component={UserSettings} />
 						<Route component={HomePage} />
 					</Switch>
 				</Router>
