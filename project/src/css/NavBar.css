@@ -22,6 +22,10 @@ nav img {
     cursor: pointer
 }
 
+.dropdown-item {
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
 	.navbar {
 		display: none;

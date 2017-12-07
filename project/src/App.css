@@ -8,6 +8,6 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="fil
 }
 
 [type=reset], [type=submit], button, html [type=button] {
-    border-color: none;
-    border-style: none;
+    -webkit-appearance: none;
 }
+
