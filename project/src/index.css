@@ -12,10 +12,6 @@ footer {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-#home-page {
-	background-color: blue;
-}
-
 #logo-bowl {
 	max-height: 200px;
 	margin-top: 20px;
@@ -80,9 +76,18 @@ div.udon-red {
 	font-weight: 700;
 }
 
+.steps {
+	font-size: 20px;
+	text-align: center;
+}
+
 .container {
 	float: center;
 	align-items: center;
+}
+
+#steps {
+	font-family: "Helvetica Neue";
 }
 
 div.udon-red.menu-header {
