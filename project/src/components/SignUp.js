@@ -4,11 +4,13 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import constants from './constants';
+import '../css/SignInUp.css';
 
 export default class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            accountPrivilege: 'user',
             displayName: '',
             email: '',
             password: '',
@@ -17,32 +19,39 @@ export default class SignUp extends React.Component {
         this.handleSignUp = this.handleSignUp.bind(this);
     }
 
-    componentDidMount() {
-        if (this.props.user) {
-            this.props.history.push(constants.routes.home);
-        }
-    }
-
     handleSignUp(event) {
         event.preventDefault();
         if (this.state.password === this.state.passwordConfirmation) {
-            this.setState({ password: '', passwordConfirmation: '' });
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                 .then(user => {
                     user.updateProfile({
                         displayName: this.state.displayName
                     });
+                    firebase.database().ref('users').child(user.uid).set({
+                        'privilege': this.state.accountPrivilege,
+                        'userdata': {
+                            'displayName': user.displayName,
+                            'uid': user.uid
+                        }
+                    });
+                    this.props.handlePrivilege(this.state.accountPrivilege);
                 })
                 .then(() => this.props.history.push(constants.routes.home))
                 .catch(error => this.setState({ errorMessage: error.message }));
         } else {
-            this.setState({ password: '', passwordConfirmation: '', errorMessage: 'Passwords do not match' });
+            this.setState({ errorMessage: 'Passwords do not match' });
         }
     }
 
     render() {
         return (
             <div className="container initial-page text-center">
+                {/* button for making admin/user accounts */}
+                <button onClick={() => this.setState({ accountPrivilege: 'admin' })}>
+                    {
+                        this.state.accountPrivilege
+                    }
+                </button>
                 <h1>Sign Up</h1>
                 {
                     this.state.errorMessage ?
