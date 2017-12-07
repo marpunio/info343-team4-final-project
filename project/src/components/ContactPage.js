@@ -44,6 +44,30 @@ export default class ContactPage extends React.Component {
     render() {
         return (
             <div>
+                <h1 className="text-center barlow">Business Hours:</h1>
+                <div className="container d-flex flex-no-wrap justify-content-center">
+                    <p className="mx-3 barlow">
+                        <strong>Our <span class="udon-red">NEW</span> Capitol Hill location:</strong><br/>
+                        <span className="px-2"><strong>Mon – Sat</strong>: 11:30am – 10:00pm</span><br/>
+                        <span className="px-2"><strong>Sun</strong>: 11:30am – 9:30pm</span><br/>
+                        <br/>
+                        <strong>University District location:</strong><br/>
+                        <span className="px-2"><strong>Sun – Thurs</strong>: 11:30am – 9:30pm</span><br/>
+                        <span className="px-2"><strong>Fri &amp; Sat</strong>: 11:30am – 10:00pm</span><br/>
+                    </p>
+                    <p className="mx-3 barlow">
+                        <strong><span class="udon-red">Holiday hours</span> at both locations:</strong><br/>
+                        <span className="px-2"><strong>Thanksgiving Day (11/23)</strong>: Closed all day</span><br/>
+                        <span className="px-2"><strong>Black Friday (11/24)</strong>: Closed all day</span><br/>
+                        <span className="px-2"><strong>Christmas Eve (12/24)</strong>: 11:30am – 8:30pm</span><br/>
+                        <span className="px-2"><strong>Christmas Day (12/25)</strong>: Closed all day</span><br/>
+                        <span className="px-2"><strong>New Years Day (1/1)</strong>: Closed all day</span><br/>
+                    </p>
+                </div>
+
+                <br/>
+                <br/>
+
                 <form onSubmit={event => this.handleSubmit(event)}>
                     <div className="container">
                         <h2>Talk to U:Don!</h2>
@@ -71,6 +95,7 @@ export default class ContactPage extends React.Component {
                         <button type="submit" className="btn btn-dark">Submit</button>
                     </div>
                 </form>
+                <br/>
             </div>
         );
     }
