@@ -20,3 +20,18 @@ div.udon-red.menu-header {
 	max-height: 180px;
 	margin-top: 20px;
 }
+
+.hours-list {
+	overflow: auto;
+	max-height: 200px;
+	max-width: 1000px;
+	border: 1px #ccc solid;
+	padding: 10px;
+}
+
+.view-menu {
+	margin: 0 auto;
+	width: 100px; 
+	color: black;
+	text-decoration-color: black;
+}
