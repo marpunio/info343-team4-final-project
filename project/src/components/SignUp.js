@@ -92,7 +92,7 @@ export default class SignUp extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-primary" type="submit">Sign Up</button>
+                        <button className="btn btn-dark" type="submit">Sign Up</button>
                     </div>
                 </form>
                 <p>
